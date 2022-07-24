@@ -1,0 +1,23 @@
+[
+    {
+        "_id": 1,
+        "name": "Drill",
+        "img": "https://i.ibb.co/q5MvccV/drill.png",
+        "price": "200" 
+
+      },
+    {
+        "_id": 2,
+        "name": "Plier",
+        "img": "https://i.ibb.co/G2tP8pw/plier.png",
+        "price": "80" 
+
+      },
+    {
+        "_id": 3,
+        "name": "Kitchen Knife",
+        "img": "https://i.ibb.co/5xSBdj6/kife.png",
+        "price": "50" 
+
+      }
+]

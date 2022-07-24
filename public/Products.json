@@ -1,0 +1,110 @@
+[
+    {
+        "_id": 1,
+        "name": "Chain Saw",
+        "img": "https://i.ibb.co/jgbN60s/chain-saw.png" ,
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 2,
+        "name": "Box Knife",
+        "img": "https://i.ibb.co/P1zMPMR/cutter.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 3,
+        "name": "drill",
+        "img": "https://i.ibb.co/q5MvccV/drill.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 4,
+        "name": "Grass Cutter",
+        "img": "https://i.ibb.co/wgYcWcW/grass-cutter.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 5,
+        "name": "Big Hammer",
+        "img": "https://i.ibb.co/pyH25Qw/hammer-1.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 6,
+        "name": "Reguler Hammer",
+        "img": "https://i.ibb.co/vxhJr2r/hammer-2.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 7,
+        "name": "Kitchen Knife",
+        "img": "https://i.ibb.co/5xSBdj6/kife.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 8,
+        "name": "Door Lock",
+        "img": "https://i.ibb.co/MZ3GRFZ/lock.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 9,
+        "name": "Plier",
+        "img": "https://i.ibb.co/G2tP8pw/plier.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 10,
+        "name": "Screw Driver",
+        "img": "https://i.ibb.co/xgjSBYN/screwdriver.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 11,
+        "name": "Measure Tape",
+        "img": "https://i.ibb.co/G5ZcypW/tape.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    },
+    {
+        "_id": 12,
+        "name": "Wranch",
+        "img": "https://i.ibb.co/G5Mb88b/wranch.png",
+        "price": "200",
+        "discription":"This tool is awesome",
+        "maximum":"100000",
+        "minimum":"1000"
+    }
+]
