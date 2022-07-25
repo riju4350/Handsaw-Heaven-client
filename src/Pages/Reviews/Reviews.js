@@ -1,37 +1,14 @@
-import React from 'react';
-import Person1 from '../../images/people1.png';
-import Person2 from '../../images/people2.png';
-import Person3 from '../../images/people3.png';
-import quote from '../../images/quote.svg';
+import React, { useEffect, useState } from 'react';
+import quote from '../../images/quote3.svg';
 import Review from './Review';
 
 const Testimonials = () => {
-    const reviews = [
-        {
-            _id: 1,
-            name: "James Stark",
-            img: Person1,
-            description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            country: "USA"
-
-        },
-        {
-            _id: 2,
-            name: "Ema Wattson",
-            img: Person2,
-            description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            country: "USA"
-
-        },
-        {
-            _id: 3,
-            name: "Ema Stone",
-            img: Person3,
-            description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            country: "USA"
-
-        }
-]
+    const [reviews,setReviews] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/reviews')
+        .then(res=>res.json())
+        .then(data=>setReviews(data))
+    },[]);
   return (
     <div className='mt-12 mx-10'>
     <div className='flex justify-between'>
@@ -44,7 +21,7 @@ const Testimonials = () => {
     </div>
     </div>      
     <div className='my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-        {reviews.map(review=> <Review key={review._id} review={review}></Review> )}
+        {reviews.map(review=><Review key={review._id} review={review}></Review> )}
     </div>
     
     </div>

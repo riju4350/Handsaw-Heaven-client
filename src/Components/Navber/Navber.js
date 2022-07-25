@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navber = () => {
     const menuItems = <>
-    <li><Link to="/home">Home</Link></li>
+    <li><Link to="/">Home</Link></li>
     <li><Link to="/services">Services</Link></li>
     <li><Link to="/blogs">Blogs</Link></li>
     <li><Link to="/about">About</Link></li>
@@ -11,7 +11,7 @@ const Navber = () => {
     <li><Link to="/login">Login</Link></li>
     </>
   return (
-    <div class="navbar bg-primary ">
+    <div class="navbar bg-primary px-5 sticky top-0 z-50 ">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">

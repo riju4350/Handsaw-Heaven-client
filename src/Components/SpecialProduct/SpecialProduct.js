@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Card from '../Card/Card';
+import SCard from '../SCard/SCard';
 
 const SpecialProduct = () => {
     const [cards,setCards] = useState([]);
     useEffect(()=>{
-        fetch('')
+        fetch('http://localhost:5000/special')
         .then(res=>res.json())
         .then(data=>setCards(data))
     },[]);
@@ -15,10 +15,8 @@ const SpecialProduct = () => {
     <h1 className='text-4xl font-bold'>Our Special Products</h1>
     </div>
      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-      {/* {cards.map(card=>{<Card></Card>})} */}
-      <Card>Buy now</Card>
-      <Card>Buy now</Card>
-      <Card>Buy now</Card>
+      {cards.map(card=><SCard key={card._id} card={card}></SCard>)}
+     
     </div>
    </div>
   )

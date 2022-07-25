@@ -1,23 +1,24 @@
 import './App.css';
-import Banner from './Components/Banner/Banner';
 import Footer from './Components/Footer/Footer';
 import Navber from './Components/Navber/Navber';
-import SpecialProduct from './Components/SpecialProduct/SpecialProduct';
-import Products from './Components/SummarSell/Products';
-import SummerSell from './Components/SummarSell/SummerSell';
-import Bsummary from './Components/Summary/Bsummary';
-import Reviews from './Pages/Reviews/Reviews'
+import { Routes,Route } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Login from './Components/Login/Login';
 
 function App() {
   return (
     <div className="">
      <Navber></Navber>
-     <Banner></Banner>
-     <SpecialProduct></SpecialProduct>
-     <SummerSell></SummerSell>
-     <Products></Products>
-     <Reviews></Reviews>
-     <Bsummary></Bsummary>
+     <Routes>
+      <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/about' element={<About></About>}></Route>
+      <Route path='/login' element={<Login></Login>}></Route>
+      {/*<Route path='/about' element={<About></About>}></Route>
+      <Route path='/about' element={<About></About>}></Route>
+      <Route path='/about' element={<About></About>}></Route> */}
+     </Routes>
+     
      <Footer></Footer>
   
     </div>
