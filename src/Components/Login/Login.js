@@ -1,8 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import {Link} from 'react-router-dom';
+// import {auth} from '../../firebase.init';
+import { getAuth } from 'firebase/auth';
 
 const Login = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(getAuth);
+
   const { register, formState: { errors }, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -46,7 +51,7 @@ const Login = () => {
         {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
         </label>
         {/* {signinError} */}
-        </div>    
+        </div> 
         <div class="card-actions justify-center mb-5">
         <input type="submit" value="Login" class="btn btn-primary font-bold mt-5 w-full" />
         </div>    
@@ -54,7 +59,7 @@ const Login = () => {
   <div><p className=''><small className='font-bold'>Forget Password? <button onClick={""} className='text-primary'>Reset Password</button></small></p></div>
   <div><p className=''><small className='font-bold'>New in Doctors Portal? <Link to="/signup" className='text-primary'>Create An Account</Link></small></p></div>
   <div class="divider">OR</div>
-  <button onClick={()=>{}}class="btn btn-outline btn-ghost btn-primary font-bold">Continue with Google</button>
+  <button onClick={()=>{signInWithGoogle()}}class="btn btn-outline btn-ghost btn-primary font-bold">Continue with Google</button>
   </div>
 </div>
 

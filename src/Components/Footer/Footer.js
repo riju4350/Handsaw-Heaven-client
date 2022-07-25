@@ -5,7 +5,7 @@ const Footer = () => {
   return (
   <footer className="p-10 bg-primary text-white">
   
-  <div className='footer flex justify-evenly'>
+  <div className='footer grid grid-cols-2 lg:grid-cols-3 lg:pl-[10%]'>
   <div>
     <span className="footer-title">Services</span> 
     <a href className="link link-hover">Branding</a> 
