@@ -1,5 +1,4 @@
 import React from 'react';
-// import FooterImg from '../../assets/images/footer.png';
 
 const Footer = () => {
   return (
@@ -28,7 +27,7 @@ const Footer = () => {
   </div> 
   </div>
   <div>
-    <p className='text-center mt-10'>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+    <p className='text-center mt-10'>Copyright © 2022 - All right reserved by Handsaw-Heaven Industries Ltd</p>
   </div>
 </footer>
   )
