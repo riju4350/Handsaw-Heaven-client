@@ -12,8 +12,7 @@ const PlaceOrder = () => {
     const navigate = useNavigate();
     
     const from = location.state?.from?.pathname || "/";
-
-    let signinError;   
+     let signinError;   
   return (   
    <div className='flex justify-center items-center h-screen'>
       <div class="card w-96 bg-base-100 shadow-xl">
