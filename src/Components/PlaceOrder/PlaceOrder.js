@@ -17,7 +17,7 @@ const PlaceOrder = () => {
    <div className='flex justify-center items-center h-screen'>
       <div class="card w-96 bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="text-2xl font-bold text-center">Login</h2>
+    <h2 class="text-2xl font-bold text-center">Place Order</h2>
     {/* react hook form */}
     <form onSubmit={handleSubmit(onSubmit)}>
     <div class="form-control w-full max-w-xs">
@@ -39,10 +39,6 @@ const PlaceOrder = () => {
      { required: {
       value: true,
     }})} />
-  <label class="label">
-    {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-    {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-  </label>
   </div>
   <div class="form-control w-full max-w-xs">
         <label class="label">
@@ -115,7 +111,7 @@ const PlaceOrder = () => {
         </label>
         {signinError}
   </div>        
-  <input type="submit" className='btn btn-primary w-full max-w-xs my-5 font-bold' value="Login"/>
+  <input type="submit" className='btn btn-primary w-full max-w-xs my-5 font-bold' value="Order"/>
     </form>
   </div>
 </div>

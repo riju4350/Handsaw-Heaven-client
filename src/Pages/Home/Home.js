@@ -5,6 +5,7 @@ import Products from '../../Components/Products/Products';
 import SummerSell from '../../Components/SummarSell/SummerSell';
 import Bsummary from '../../Components/Summary/Bsummary';
 import Reviews from '../../Pages/Reviews/Reviews'
+import PlaceOrder from '../../Components/PlaceOrder/PlaceOrder';
 
 const Home = () => {
    return (
@@ -15,6 +16,7 @@ const Home = () => {
      <Products></Products>
      <Reviews></Reviews>
      <Bsummary></Bsummary>
+     <PlaceOrder></PlaceOrder>
     </div>
   )
 }
