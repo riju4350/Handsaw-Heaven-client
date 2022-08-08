@@ -20,12 +20,10 @@ export default function Login() {
     console.log(data);
   };
   return (
-    <div className="flex justify-center items-center my-10 ">
+    <div className="flex justify-center items-center my-10">
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
-          <h2 class="text-2xl font-bold text-center">
-            Profile tostify add korte hobe
-          </h2>
+          <h2 class="text-2xl font-bold text-center">Profile</h2>
           {/* react hook form */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div class="form-control w-full max-w-xs">

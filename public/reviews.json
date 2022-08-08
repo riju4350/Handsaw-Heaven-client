@@ -1,23 +1,23 @@
 [
-    {
-        "name": "James Stark",
-        "img": "https://i.ibb.co/HVvDNM4/people1.png",
-        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "country": "USA"
-
-    },
-    {
-        "name": "Ema Wattson",
-        "img": "https://i.ibb.co/hcBrfHb/people2.png",
-        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "country": "USA"
-
-    },
-    {
-        "name": "Ema Stone",
-        "img": "https://i.ibb.co/ryc95t2/people3.png",
-        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "country": "USA"
-
-    }
+  {
+    "name": "James Stark",
+    "img": "https://i.ibb.co/HVvDNM4/people1.png",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "country": "USA",
+    "ratings": "5"
+  },
+  {
+    "name": "Ema Wattson",
+    "img": "https://i.ibb.co/hcBrfHb/people2.png",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "country": "USA",
+    "ratings": "4"
+  },
+  {
+    "name": "Ema Stone",
+    "img": "https://i.ibb.co/ryc95t2/people3.png",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "country": "USA",
+    "ratings": "5"
+  }
 ]

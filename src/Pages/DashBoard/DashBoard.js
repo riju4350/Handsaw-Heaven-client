@@ -1,22 +1,52 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
-const Dashboard= () => {
+const Dashboard = () => {
+  let user = true;
   return (
-    <div class="drawer">
-  <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
-    <label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label>
-  </div> 
-  <div class="drawer-side">
-    <label for="my-drawer" class="drawer-overlay"></label>
-    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-    <li><Link to="/addProduct">Add Product</Link></li>
-    <li><Link to="/manageProduct">Remove Product</Link></li>
-    <li><Link to="/myItems">My Orders</Link></li>
-    </ul>
-  </div>
-</div>
-  )
-}
+    <div class="drawer drawer-mobile">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content ">
+        <h2 className="text-7xl font-bold text-slate-200 text-center ">
+          Dashboard
+        </h2>
+        <Outlet></Outlet>
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer-2" class="drawer-overlay"></label>
+        {user ? (
+          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+            <li>
+              <Link to="myorders">My Orders</Link>
+            </li>
+            <li>
+              <Link to="addreview">Add A Review</Link>
+            </li>
+            <li>
+              <Link to="myprofile">My Profile</Link>
+            </li>
+          </ul>
+        ) : (
+          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+            <li>
+              <Link to="/myprofile">My Profile</Link>
+            </li>
+            <li>
+              <Link to="/manageorder">Manage All Orders</Link>
+            </li>
+            <li>
+              <Link to="/addaproduct">Add A Product</Link>
+            </li>
+            <li>
+              <Link to="/manageaproduct">Manage A Product</Link>
+            </li>
+            <li>
+              <Link to="/makeadmin">Make Admin</Link>
+            </li>
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+};
 export default Dashboard;

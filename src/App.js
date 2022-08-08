@@ -1,32 +1,54 @@
-import './App.css';
-import Footer from './Components/Footer/Footer';
-import Navber from './Components/Navber/Navber';
-import { Routes,Route } from 'react-router-dom';
-import Home from './Pages/Home/Home';
-import About from './Pages/About/About';
-import Login from './Components/Login/Login';
-import NotFound from './Components/NotFound/NotFound';
-import Signup from './Components/Signup/Signup';
-import Dashboard from './Pages/DashBoard/DashBoard';
-import Myprofile from './Pages/Myprofile/Myprofile';
-import Allproducts from './Pages/Allproducts/Allproducts';
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
+import Navber from "./Components/Navber/Navber";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import Login from "./Components/Login/Login";
+import NotFound from "./Components/NotFound/NotFound";
+import Signup from "./Components/Signup/Signup";
+import Dashboard from "./Pages/DashBoard/DashBoard";
+import Myprofile from "./Pages/Myprofile/Myprofile";
+import Allproducts from "./Pages/Allproducts/Allproducts";
+import RequireAuth from "./Components/RequiredAuth/RequiredAuth";
+import BuyNow from "./Components/BuyNow/BuyNow";
+import Blogs from "./Components/Blogs/Blogs";
+import AddReviews from "./Pages/AddReviews/AddReviews";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
+import MyOrders from "./Components/MyOrders/MyOrders";
+import MyProfile from "./Pages/Myprofile/Myprofile";
 
 function App() {
   return (
     <div className="">
-     <Navber></Navber>
-     <Routes>
-      <Route path='/' element={<Home></Home>}></Route>
-      <Route path='/about' element={<About></About>}></Route>
-      <Route path='/allproducts' element={<Allproducts></Allproducts>}></Route>
-      <Route path='/myprofile' element={<Myprofile></Myprofile>}></Route>
-      <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
-      <Route path='/login' element={<Login></Login>}></Route>
-      <Route path='/signup' element={<Signup></Signup>}></Route>
-      <Route path='*' element={<NotFound></NotFound>}></Route>
-     </Routes>
-     <Footer></Footer>
-  
+      <Navber></Navber>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="home" element={<Home></Home>}></Route>
+        <Route path="about" element={<About></About>}></Route>
+        <Route path="purchase" element={<Allproducts></Allproducts>}></Route>
+        <Route
+          path="product/:id"
+          element={
+            <RequireAuth>
+              <BuyNow></BuyNow>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
+        <Route path="portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path="dashboard" element={<Dashboard></Dashboard>}>
+          <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
+          <Route path="addreview" element={<AddReviews></AddReviews>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
+        <Route path="blogs" element={<Blogs></Blogs>}></Route>
+
+        <Route path="login" element={<Login></Login>}></Route>
+        <Route path="signup" element={<Signup></Signup>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
+      </Routes>
+      <Footer></Footer>
     </div>
   );
 }
