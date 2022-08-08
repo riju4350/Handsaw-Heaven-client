@@ -7,9 +7,11 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setMyOrders(data));
+    if (user) {
+      fetch(`http://localhost:5000/orders?email=${user.email}`)
+        .then((res) => res.json())
+        .then((data) => setMyOrders(data));
+    }
   }, [user]);
   return (
     <div>
@@ -21,15 +23,17 @@ const MyOrders = () => {
               <th></th>
               <th>Name</th>
               <th>Email</th>
+              <th>Address</th>
               <th>Order Quantity</th>
             </tr>
           </thead>
           <tbody>
             {myOrders.map((order, index) => (
               <tr>
-                <th>{index}</th>
+                <th>{index + 1}</th>
                 <td>{order.name}</td>
                 <td>{order.email}</td>
+                <td>{order.address}</td>
                 <td>{order.orderQuantity}</td>
               </tr>
             ))}

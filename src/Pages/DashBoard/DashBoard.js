@@ -15,7 +15,7 @@ const Dashboard = () => {
       <div class="drawer-side">
         <label for="my-drawer-2" class="drawer-overlay"></label>
         {user ? (
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <ul class="menu p-4 overflow-y-auto w-80 bg-slate-100 text-base-content">
             <li>
               <Link to="myorders">My Orders</Link>
             </li>
