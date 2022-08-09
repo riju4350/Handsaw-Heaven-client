@@ -25,10 +25,10 @@ const Signup = () => {
 
   const [token] = useToken(user || gUser);
 
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || "/";
+  // const from = location.state?.from?.pathname || "/";
 
   // const verifyEmail = () => {
   //   sendEmailVerification(auth.currentUser).then(() => {
@@ -54,9 +54,8 @@ const Signup = () => {
     );
   }
 
-  if (user || gUser) {
-    console.log(user || gUser);
-    navigate(from, { replace: true });
+  if (token) {
+    navigate("/purchase");
   }
 
   const onSubmit = async (data) => {
@@ -64,7 +63,7 @@ const Signup = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     // verifyEmail();
-    navigate("/");
+    // navigate("/purchase");
   };
   return (
     <div className="flex justify-center items-center h-screen my-12">

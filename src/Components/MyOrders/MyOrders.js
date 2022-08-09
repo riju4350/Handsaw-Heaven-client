@@ -29,7 +29,7 @@ const MyOrders = () => {
           </thead>
           <tbody>
             {myOrders.map((order, index) => (
-              <tr>
+              <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{order.name}</td>
                 <td>{order.email}</td>
