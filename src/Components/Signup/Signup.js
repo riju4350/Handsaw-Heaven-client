@@ -4,11 +4,11 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-// import { sendEmailVerification } from "firebase/auth";
+// import { sendEmailVerification } from "firebase/auth";-
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../../Components/Loading/Loading";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../Hooks/useToken/useToken";
 
 const Signup = () => {
@@ -25,13 +25,18 @@ const Signup = () => {
 
   const [token] = useToken(user || gUser);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
   // const verifyEmail = () => {
   //   sendEmailVerification(auth.currentUser).then(() => {
   //     console.log("Email verification sent!");
   //   });
   // };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   let signUpError;
 
@@ -51,6 +56,7 @@ const Signup = () => {
 
   if (user || gUser) {
     console.log(user || gUser);
+    navigate(from, { replace: true });
   }
 
   const onSubmit = async (data) => {
@@ -58,7 +64,7 @@ const Signup = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     // verifyEmail();
-    // navigate('/');
+    navigate("/");
   };
   return (
     <div className="flex justify-center items-center h-screen my-12">
