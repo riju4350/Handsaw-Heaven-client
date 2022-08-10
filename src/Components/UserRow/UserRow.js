@@ -4,16 +4,23 @@ import { toast } from "react-toastify";
 const UserRow = ({ user }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://vast-temple-08700.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 403) {
+          alert("Failed to make an admin");
+        }
+        return res.json();
+      })
       .then((data) => {
-        console.log(data);
-        toast.success("Successfully made an admin");
+        if (data.modifiedCount > 0) {
+          alert("Successfully made an admin");
+          // toast.success("Successfully made an admin");
+        }
       });
   };
   return (

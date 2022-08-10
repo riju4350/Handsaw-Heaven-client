@@ -17,7 +17,7 @@ const AddReviews = () => {
       ratings,
     };
     // console.log(review);
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://vast-temple-08700.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

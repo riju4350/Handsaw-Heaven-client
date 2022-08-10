@@ -19,6 +19,7 @@ import MyOrders from "./Components/MyOrders/MyOrders";
 import MyProfile from "./Pages/Myprofile/Myprofile";
 import Users from "./Components/Users/Users";
 import { ToastContainer } from "react-toastify";
+import RequireAdmin from "./Components/RequiredAdmin/RequiredAdmin";
 
 function App() {
   return (
@@ -37,8 +38,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
-        <Route path="portfolio" element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path="myPortfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route
           path="dashboard"
           element={
@@ -48,9 +48,17 @@ function App() {
           }
         >
           <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
-          <Route path="users" element={<Users></Users>}></Route>
+          <Route
+            path="makeAdmin"
+            element={
+              <RequireAdmin>
+                <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
           <Route path="addreview" element={<AddReviews></AddReviews>}></Route>
-          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+          {/* <Route path="myprofile" element={<MyProfile></MyProfile>}></Route> */}
+          <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
         </Route>
         <Route path="blogs" element={<Blogs></Blogs>}></Route>
 
@@ -59,7 +67,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </div>
   );
 }

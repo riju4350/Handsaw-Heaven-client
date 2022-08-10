@@ -1,8 +1,13 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
+import auth from "../../firebase.init";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Dashboard = () => {
-  let user = true;
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
+
   return (
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -14,13 +19,10 @@ const Dashboard = () => {
       </div>
       <div class="drawer-side">
         <label for="my-drawer-2" class="drawer-overlay"></label>
-        {user ? (
+        {!admin && (
           <ul class="menu p-4 overflow-y-auto w-80 bg-slate-100 text-base-content">
             <li>
               <Link to="myorders">My Orders</Link>
-            </li>
-            <li>
-              <Link to="users">All Users</Link>
             </li>
             <li>
               <Link to="addreview">Add A Review</Link>
@@ -29,22 +31,23 @@ const Dashboard = () => {
               <Link to="myprofile">My Profile</Link>
             </li>
           </ul>
-        ) : (
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+        )}
+        {admin && (
+          <ul class="menu p-4 overflow-y-auto w-80 bg-slate-100 text-base-content">
             <li>
-              <Link to="/myprofile">My Profile</Link>
+              <Link to="myprofile">My Profile</Link>
             </li>
             <li>
-              <Link to="/manageorder">Manage All Orders</Link>
+              <Link to="manageorder">Manage All Orders</Link>
             </li>
             <li>
-              <Link to="/addaproduct">Add A Product</Link>
+              <Link to="addaproduct">Add A Product</Link>
             </li>
             <li>
-              <Link to="/manageaproduct">Manage A Product</Link>
+              <Link to="manageaproduct">Manage A Product</Link>
             </li>
             <li>
-              <Link to="/makeadmin">Make Admin</Link>
+              <Link to="makeAdmin">Make Admin</Link>
             </li>
           </ul>
         )}
@@ -53,3 +56,7 @@ const Dashboard = () => {
   );
 };
 export default Dashboard;
+
+{
+  /* */
+}

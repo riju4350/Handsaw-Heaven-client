@@ -17,15 +17,36 @@ export default function Login() {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
+    const { name, email, education, location, linkdin, phone } = data;
+    const profile = {
+      name,
+      email,
+      education,
+      phone,
+      location,
+      linkdin,
+    };
+    console.log(profile);
+
+    fetch(`https://vast-temple-08700.herokuapp.com/myprofile/${email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(profile),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.results.acknowledged === true) {
+          alert("Successfully Updated Profile");
+        }
+      });
   };
   return (
     <div className="flex justify-center items-center my-10 ">
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
-          <h2 class="text-2xl font-bold text-center">
-            Profile tostify add korte hobe
-          </h2>
+          <h2 class="text-2xl font-bold text-center">Profile</h2>
           {/* react hook form */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div class="form-control w-full max-w-xs">

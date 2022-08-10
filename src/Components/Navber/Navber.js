@@ -22,7 +22,7 @@ const Navber = () => {
         <Link to="about">About</Link>
       </li>
       <li>
-        <Link to="portfolio">Portfolio</Link>
+        <Link to="myPortfolio">Portfolio</Link>
       </li>
       <li>
         <Link to="blogs">Blogs</Link>

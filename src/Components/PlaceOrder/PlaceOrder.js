@@ -22,7 +22,7 @@ export default function PlaceOrder() {
     };
     console.log(orders);
 
-    fetch("http://localhost:5000/orders", {
+    fetch("https://vast-temple-08700.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -30,7 +30,11 @@ export default function PlaceOrder() {
       body: JSON.stringify(orders),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.acknowledged === true) {
+          alert("Successfully placed an order");
+        }
+      });
   };
   return (
     // hook form e vul ache purata korte hobe

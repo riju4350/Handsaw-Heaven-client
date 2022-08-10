@@ -9,7 +9,7 @@ const useToken = (user) => {
       name: displayName,
     };
     if (email) {
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(`https://vast-temple-08700.herokuapp.com/user/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

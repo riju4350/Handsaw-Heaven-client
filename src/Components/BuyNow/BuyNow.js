@@ -7,7 +7,7 @@ const BuyNow = () => {
   const [product, setProduct] = useState({});
   const { name, img, price, discription, maximum, minimum } = product;
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://vast-temple-08700.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
