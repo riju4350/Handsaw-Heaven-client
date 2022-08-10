@@ -20,6 +20,8 @@ import MyProfile from "./Pages/Myprofile/Myprofile";
 import Users from "./Components/Users/Users";
 import { ToastContainer } from "react-toastify";
 import RequireAdmin from "./Components/RequiredAdmin/RequiredAdmin";
+import AddProduct from "./Components/AddProduct/AddProduct";
+import RemoveProduct from "./Components/RemoveProduct/RemoveProduct";
 
 function App() {
   return (
@@ -57,11 +59,16 @@ function App() {
             }
           ></Route>
           <Route path="addreview" element={<AddReviews></AddReviews>}></Route>
-          {/* <Route path="myprofile" element={<MyProfile></MyProfile>}></Route> */}
           <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
-        </Route>
-        <Route path="blogs" element={<Blogs></Blogs>}></Route>
 
+          <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
+          <Route
+            path="manageProduct"
+            element={<RemoveProduct></RemoveProduct>}
+          ></Route>
+        </Route>
+
+        <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
