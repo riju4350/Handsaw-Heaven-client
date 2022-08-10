@@ -17,6 +17,8 @@ import AddReviews from "./Pages/AddReviews/AddReviews";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import MyOrders from "./Components/MyOrders/MyOrders";
 import MyProfile from "./Pages/Myprofile/Myprofile";
+import Users from "./Components/Users/Users";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -46,6 +48,7 @@ function App() {
           }
         >
           <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
+          <Route path="users" element={<Users></Users>}></Route>
           <Route path="addreview" element={<AddReviews></AddReviews>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
         </Route>
@@ -56,6 +59,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
